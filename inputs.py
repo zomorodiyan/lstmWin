@@ -1,0 +1,9 @@
+dens = 101
+bgn = -1
+fin = 5
+len = 8
+#winName = 'regular'
+winName = 'addspace'
+ws = 3
+eqspace = 2
+epochs = 1000

@@ -56,3 +56,12 @@ def make_win(i,data):
     else:
         raise ValueError("only name options:'regular','eqspace','addspace'")
     return window
+
+def reconstruct_scaler():
+# reconstruct the same scaler as the training time using saved min and max
+    filename = './results/scaler.npz'
+    data = np.load(filename)
+    scalermin = data['scalermin']; scalermax = data['scalermax']
+    scaler = MinMaxScaler(feature_range=(-1,1))
+    scaler.fit([scalermin,scalermax])
+    return scaler

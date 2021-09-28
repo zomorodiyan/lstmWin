@@ -17,13 +17,12 @@ name = 's1'
 s1 = np.expand_dims(imp(int(dens/100),name),axis=1)
 serie = s1
 
-'''
 # Scale Data
 scaler = MinMaxScaler(feature_range=(-1,1))
-scaled_data = scaler.fit_transform(data)
-filename = './results/scaler_' + str(nx) + 'x' + str(ny) + '.npz'
+serie = scaler.fit_transform(serie)
+filename = './results/scaler.npz'
 np.savez(filename, scalermin = scaler.data_min_, scalermax = scaler.data_max_)
-'''
+
 serie_len = serie.shape[0]
 n_states = 1
 
@@ -45,6 +44,7 @@ ytrain = ytrain[perm,:]
 
 #create the LSTM architecture
 model = Sequential()
+model.add(LSTM(50, input_shape=(ws, n_states), return_sequences=True, activation='tanh'))
 model.add(LSTM(50, input_shape=(ws, n_states), return_sequences=True, activation='tanh'))
 model.add(LSTM(50, activation='tanh'))
 model.add(Dense(n_states))

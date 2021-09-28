@@ -1,9 +1,10 @@
 dens = 101
 bgn = -1
-fin = 5
+fin = 1
 len = 8
 #winName = 'regular'
-winName = 'addspace'
-ws = 3
+#winName = 'addspace'
+winName = 'eqspace'
+ws = 6
 eqspace = 2
-epochs = 1000
+epochs = 2000

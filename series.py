@@ -6,7 +6,7 @@ t = np.linspace(bgn,fin,dens)
 s1 = np.empty([dens])
 #s1 = 10*np.exp(-50*np.abs(t)) - 0.01/(np.power((t-0.5),2)+0.001)\
 #        + 5*np.sin(5*t)
-s1 = np.sin(t)
+s1 = 10*np.sin(t) + 5*np.cos(2*t) + 7*np.sin(25*t)
 
 exp(int(dens/100),s1,'s1')
 

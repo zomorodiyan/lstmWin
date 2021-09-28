@@ -16,4 +16,4 @@ for i in range(winLen(), dens):
     s1[i,:] = np.copy(model.predict(win))
 
 #%% export a, b for rom, fom, romfom
-exp(int(dens/100),s1,'s1')
+exp(int(dens/100),s1,'s1p')

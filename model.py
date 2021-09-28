@@ -45,8 +45,8 @@ ytrain = ytrain[perm,:]
 
 #create the LSTM architecture
 model = Sequential()
-model.add(LSTM(80, input_shape=(ws, n_states), return_sequences=True, activation='tanh'))
-model.add(LSTM(80, input_shape=(ws, n_states), activation='tanh'))
+model.add(LSTM(50, input_shape=(ws, n_states), return_sequences=True, activation='tanh'))
+model.add(LSTM(50, activation='tanh'))
 model.add(Dense(n_states))
 
 #compile model
